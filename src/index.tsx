@@ -23,27 +23,27 @@ export const history: any = createBrowserHistory();
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
-  <Provider store={store}>
-    <Loading></Loading>
-    <HistoryRouter history={history}>
-      <Routes>
-        <Route path="" element={<HomeTemplate />}>
-          <Route index element={<Home/>}></Route>
-          <Route path="detail">
-            <Route path=':id' element={<Detail/>}></Route>
-          </Route>
-          <Route path="profile" element={<Profile/>}></Route>
-          <Route path="trips" element={<TripHistory/>}></Route>
-          <Route path="favourite" element={<Favourite />} />
-          <Route path="book">
-            <Route path=':id' element={<Book/>}></Route>
-          </Route>
-          <Route path="search" element={<Search />} />
+    <Provider store={store}>
+        <Loading></Loading>
+        <HistoryRouter history={history}>
+            <Routes>
+                <Route path="" element={<HomeTemplate />}>
+                    <Route index element={<Home />}></Route>
+                    <Route path="detail">
+                        <Route path=':id' element={<Detail />}></Route>
+                    </Route>
+                    <Route path="profile" element={<Profile />}></Route>
+                    <Route path="trips" element={<TripHistory />}></Route>
+                    <Route path="favourite" element={<Favourite />} />
+                    <Route path="book">
+                        <Route path=':id' element={<Book />}></Route>
+                    </Route>
+                    <Route path="search" element={<Search />} />
 
-          <Route path="*" element={<Navigate to="/" />}></Route>
-        </Route>
+                    <Route path="*" element={<Navigate to="/" />}></Route>
+                </Route>
 
-      </Routes>
-    </HistoryRouter>
-  </Provider>
+            </Routes>
+        </HistoryRouter>
+    </Provider>
 );
